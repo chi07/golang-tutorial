@@ -125,9 +125,9 @@ func Delete( s *book.Service) http.Handler  {
 }
 
 func MakeBookHandler(router *mux.Router, service *book.Service)  {
-	router.Handle("/api/book", FetchAll(service)).Methods("GET")
-	router.Handle("/api/book/{id}", GetById(service)).Methods("GET")
-	router.Handle("/api/book/add", Store(service)).Methods("POST")
-	router.Handle("/api/book/update/{id}", Update(service)).Methods("PUT", "PATCH")
-	router.Handle("/api/book/delete/{id}", Delete(service)).Methods("DELETE")
+	router.Handle("/api/books", FetchAll(service)).Methods("GET")
+	router.Handle("/api/books/{bookID}", GetById(service)).Methods("GET")
+	router.Handle("/api/books/add", Store(service)).Methods("POST")
+	router.Handle("/api/books/update/{bookID}", Update(service)).Methods("PUT", "PATCH")
+	router.Handle("/api/books/delete/{bookID}", Delete(service)).Methods("DELETE")
 }
